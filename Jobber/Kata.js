@@ -1,11 +1,4 @@
-
-// console.log(calculator("Calc.new.one.plus.two"));
-// console.log(calculator("Calc.new.five.minus.six"));
-// console.log(calculator("Calc.new.seven.times.two"));
-// console.log(calculator("Calc.new.nine.divided_by.three"));
-// console.log(calculator("Calc.new.nine.divided_by.zero"));
-// console.log(calculator("Calc.new.nine.divided_by"));
-
+/**Available number in library*/
 var numbers = {
 	"zero" : 0,
 	"one" : 1,
@@ -19,6 +12,7 @@ var numbers = {
 	"nine" : 9
 };
 
+/**Array of string for trying to divide by zero.*/
 var impossible = [ //* Taken from quotes on the internet. *//
 	"It is impossible to hold your breath for 20 years.",
 	"It is impossible to do what's not possible.",
@@ -31,6 +25,7 @@ var impossible = [ //* Taken from quotes on the internet. *//
 	"\"It's hard to learn to play the piano, if you don't have a piano.\" -Pippi Longstocking"
 ];
 
+/**Inital page loading*/
 function load_kata() {
 	document.getElementById("solution").innerHTML = "";
 	document.getElementById("exercise").innerHTML = document.getElementById('kata').innerHTML;
@@ -39,6 +34,7 @@ function load_kata() {
     };
 }
 
+/**Input from the UI buttons.*/
 function input_kata(value) {
 	if(value == '' || document.getElementById("kata_input").value == '') {
 		document.getElementById("kata_input").value = 'Calc.new';
@@ -49,6 +45,7 @@ function input_kata(value) {
 	document.getElementById("solution").innerHTML = calculator (document.getElementById('kata_input').value.replace(/\n/g, ''));
 }
 
+/**Takes in the string input with strict logic, returns the operation.*/
 function calculator (input) {
 	var array = input.split("."); 
 	operation = array[3],

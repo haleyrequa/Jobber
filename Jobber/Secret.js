@@ -1,6 +1,8 @@
-// console.log(recover_secret(triplets) == "whatisup");
+/**
+Secret.js takes a set of length 3 arrays and returns a secret message.
+*/
 
-
+/**Inital page loading*/
 function load_secret() {
 	document.getElementById("solution").innerHTML = "";
 	document.getElementById("exercise").innerHTML = document.getElementById('secret').innerHTML;
@@ -9,10 +11,14 @@ function load_secret() {
 	submit_secret();
 }
 
+/**Called when input changes to update the solution.*/
 function submit_secret() {
 	document.getElementById("solution").innerHTML = recover_secret (document.getElementById('secret_input').value.replace(/\n/g, ''));
 }
 
+
+/**Goes through each triplet concetenating a message, 
+sorting by the logic that each triplet is in the correct order.*/
 function recover_secret(input) {
 	var secret = [],
 	triplets,
@@ -48,10 +54,4 @@ function recover_secret(input) {
 		return '';
 	}
 	return secret.join('');
-}
-
-function parse_string (input){
-	var array = [];
-	array = JSON.parse[input];
-
 }

@@ -6,6 +6,7 @@ DirectionEnum = {
 }
 
 
+/**Inital page loading*/
 function load_spiral() {
 	document.getElementById("exercise").innerHTML = document.getElementById('spiral').innerHTML;
 	document.getElementById("solution").innerHTML = "";
@@ -13,6 +14,7 @@ function load_spiral() {
     document.getElementById("spiral_input").onclick = submit_spiral;
 }
 
+/**Called when input changes to update the solution.*/
 function submit_spiral() {
 	var n = document.getElementById('spiral_input').value,
 	matrix = create_NxN_Matrix(n);
@@ -21,6 +23,7 @@ function submit_spiral() {
 	animate_spiral(n);
 }
 
+//**Traverses through an nxn matrix clockwise while incrementing the cells.*/
 function travel_in_spriral(matrix, n) {
 	var total = n * n;
 	var count = 0;
@@ -84,7 +87,7 @@ function travel_in_spriral(matrix, n) {
 	}
 }
 
-
+/**Initializes and NxN matrix array.*/
 function create_NxN_Matrix(n) {
 	var matrix = [];
 	for (var y = 0; y < n; y++ ) {
@@ -96,6 +99,7 @@ function create_NxN_Matrix(n) {
 	return matrix;
 }
 
+/**Displays the matrix in HTML*/
 function format_matrix(matrix) {
 	var html_matrix = "<table class=\"spiral\"><tbody>";
 
@@ -111,6 +115,7 @@ function format_matrix(matrix) {
 	return html_matrix;
 }
 
+/**Animates the spriral clockwise, first appearing in black, then rainbow a moment later.*/
 function animate_spiral(n) {
 	var size = n * n,
 		timeEnter = 1000;
