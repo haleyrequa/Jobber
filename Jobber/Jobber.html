@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="jobber.css">
+	<script src="version.js"></script>
+	<script src="spiral.js"></script>
+	<script src="secret.js"></script>
+	<script src="kata.js"></script>
+</head>
+<body>
+	<header>
+		<button type="button" onclick="load_kata()">Kata</button>
+		<button type="button" onclick="load_version()">Version</button>
+		<button type="button" onclick="load_secret()">Secret</button>
+		<button type="button" onclick="load_spiral()">Spiral</button>
+	</header>
+	<div id="exercise" class="exercise"></div>
+	<div id="solution" class="solution"></div>
+</body>
+<script id="kata" type ="text/html">
+	<div>
+		<button type=\"button\" onclick="input_kata('seven')">7</button>
+		<button type=\"button\" onclick="input_kata('eight')">8</button>
+		<button type=\"button\" onclick="input_kata('nine')">9</button>
+	</div>
+	<div>
+		<button type=\"button\" onclick="input_kata('four')">4</button>
+		<button type=\"button\" onclick="input_kata('five')">5</button>
+		<button type=\"button\" onclick="input_kata('six')">6</button>
+	</div>
+	<div>
+		<button type=\"button\" onclick="input_kata('one')">1</button>
+		<button type=\"button\" onclick="input_kata('two')">2</button>
+		<button type=\"button\" onclick="input_kata('three')">3</button>
+	</div>
+	<div>
+		<button type=\"button\" onclick="input_kata('zero')">0</button>
+	</div>
+	<div>
+		<button type=\"button\" onclick="input_kata('plus')">+</button>
+		<button type=\"button\" onclick="input_kata('minus')">-</button>
+		<button type=\"button\" onclick="input_kata('divided_by')">/</button>
+		<button type=\"button\" onclick="input_kata('times')">x</button>
+	</div>
+		<textarea id="kata_input" name="kata_input" type="text"></textarea>
+	
+	<div>
+		<button type=\"button\" onclick="input_kata('')">Clear</button>
+	</div>
+</script>
+<script id="spiral" type ="text/html">
+	N : 
+	<input id="spiral_input" type="number" min="1"></input>
+</script>
+<script id="version" type ="text/html">
+	Version : 
+	<input id="version_input" type="text"></input>
+</script>
+<script id="secret" type ="text/html">
+	<div>Enter the secret Message:</div>
+	<textarea id="secret_input" name="secret_input" type="text"></textarea>
+</script>
+</html>
